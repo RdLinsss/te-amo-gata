@@ -37,9 +37,48 @@
     </main>
 </body>
 </html>
-<div style="position: absolute; left: -9999px;">
-    <iframe width="1" height="1" 
-    src="https://www.youtube.com/embed/aiS8pCL0pTY?autoplay=1&loop=1&playlist=aiS8pCL0pTY" 
-    frameborder="0" allow="autoplay">
-    </iframe>
-</div>
+<style>
+  #player-controle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    font-weight: bold;
+  }
+</style>
+
+<div id="youtube-player" style="position: absolute; left: -9999px;"></div>
+
+<button id="player-controle" onclick="tocarMusica()">Ouvir nossa música 🎵</button>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+      height: '1',
+      width: '1',
+      videoId: 'aiS8pCL0pTY',
+      playerVars: {
+        'autoplay': 0,
+        'loop': 1,
+        'playlist': 'aiS8pCL0pTY'
+      }
+    });
+  }
+
+  function tocarMusica() {
+    if (player && player.playVideo) {
+      player.playVideo();
+      // Opcional: esconde o botão depois que começar a tocar
+      document.getElementById('player-controle').style.display = 'none';
+    }
+  }
+</script>
