@@ -1,0 +1,88 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --rosa-principal: #ff85a1; /* Rosa Chamativo */
+    --rosa-escuro: #ff4d6d;    /* Rosa Forte */
+    --cor-texto: #fff0f3;      /* Rosa Claríssimo para contraste */
+    --cor-bg: #ffccd5;        /* Rosa Médio para o fundo */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-bg);
+    color: var(--cor-texto);
+    font-family: 'Poppins', sans-serif; /* Precisa da fonte no HTML */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* Fundo de rosas clarinho */
+    background-image: url('https://www.transparenttextures.com/patterns/roses.png');
+    background-repeat: repeat;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- CABEÇALHO (Ricardo & Daniela) --- */
+header {
+    background-color: rgba(255, 77, 109, 0.9);
+    padding: 60px 20px;
+    border-radius: 0 0 25px 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-family: 'Great Vibes', cursive; /* Precisa da fonte no HTML */
+    font-size: 4.5rem; /* LETRA GIGANTE */
+    margin: 0;
+}
+
+header p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+/* --- FRASES ROMÂNTICAS --- */
+.messages h2, .final-text h3 {
+    font-family: 'Dancing Script', cursive; /* Precisa da fonte no HTML */
+    font-size: 3rem; /* LETRA GRANDE */
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+}
+
+.messages p, .final-text p {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+/* --- GRADE DE FOTOS (A MÁGICA) --- */
+.photo-grid {
+    display: grid;
+    /* Faz as fotos ficarem em 2 ou 3 colunas no celular */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Espaço entre elas */
+    padding: 20px;
+}
+
+.photo-grid img {
+    width: 100%; /* Elas ocupam todo o espaço da coluna */
+    height: 350px; /* Altura fixa para ficarem iguais */
+    object-fit: cover; /* Recorta sem esticar */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 6px solid white; /* Borda branca grossa */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- RODAPÉ --- */
+footer {
+    padding: 30px 0;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+}
